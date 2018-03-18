@@ -41,7 +41,7 @@ Da bi posjetitelj mogao prodavati ili kupovati automobile, učestovati u anketi 
   
   - ### Prodaja automobila
   
-  Da bi objavili automobil koji žele prodati, potrebno je da korisnici unesu sljedeće informacije u automobilu: 
+  Da bi objavili automobil koji žele prodati, potrebno je da korisnici unesu sljedeće informacije o automobilu: 
   
   1. Proizvođač
   2. Model
