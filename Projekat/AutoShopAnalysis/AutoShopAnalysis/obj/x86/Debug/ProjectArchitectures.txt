@@ -1,0 +1,1 @@
+c:\users\whiteblack\source\repos\AutoShopAnalysis\AutoShopAnalysis\AutoShopAnalysis.csproj;x86
