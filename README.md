@@ -1,4 +1,4 @@
-# XDrive - Buy, Sell and Analyze :car::dash:
+# XDrive - Buy Safe and Sell Smart Using our Precise and Detailed Car Analyses!:car::dash:
 
 ![Alt Text](https://media.giphy.com/media/l2R0e9y6A304JkFOg/giphy.gif)
 
