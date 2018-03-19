@@ -2,6 +2,8 @@
 
 ![Alt Text](https://media.giphy.com/media/l2R0e9y6A304JkFOg/giphy.gif)
 
+![Alt Text](https://i.imgur.com/NbDovdB.gif)
+
 ## Članovi tima:
 1. Ćazim Rahić
 2. Mustafa Zukić
