@@ -15,7 +15,7 @@ Aplikacija **AutoshopAnalysis** ima za cilj da pojednostavi kupovinu i prodaju a
 ## Procesi
 - ### Pregled aplikacije
 
-Na početnoj stranici prikazuje se izbornik: posjetitelj može pristupiti kao gost i pogledati statistiku i automobile u ponudi, ili se može registrirati.
+Na početnoj stranici prikazuje se izbornik: posjetitelj može pogledati statistiku i automobile u ponudi, ali se mora registrirati.
 
 - ### Registracija korisnika
 
@@ -54,33 +54,12 @@ Da bi posjetitelj mogao prodavati ili kupovati automobile, učestovati u anketi 
   7. Kubikaža
   8. Konjskih snaga
   9. Pogon
-  10. Tip
-  11. Broj vrata
-  12. Veličina felgi
-  13. Emisioni standard
-  14. Transmisija
-  15. Boja
-  16. Ozvučenje/Muzika
-  17. Broj prethodnih vlasnika (ako je vozilo korišteno)
-  18. Airbag
-  19. ABS
-  20. Alu felge
-  21. Centralna brava
-  22. Daljinsko otključavanje
-  23. ESP
-  24. Električni podizači stakla
-  25. Električni retrovizori
-  26. ISOFIX
-  27. Klima
-  28. Metalik
-  29. Ocarinjen
-  30. Servisna knjiga
-  31. Servo volan
-  32. Start-Stop sistem
-  33. Tempomat
-  34. Touchscreen
-  35. Turbo
-  36. Garancija
+  10. Boja
+  11. Ocarinjen
+  12. Servisna knjiga
+  13. Touchscreen
+  14. Turbo
+  15. Garancija
   
   Potrebno je još dodati i slike vozila, a po želji se može dodati i detaljniji opis. Garancija se može odrediti na osnovu statističkih podataka o kvarovima na određenom modelu automobila. Nakon prodaje, korisnik treba ažurirati artikal, odnosno naznačiti da je prodat, nakon čega se briše iz baze i ažurira se statistika.
   
@@ -111,8 +90,7 @@ Da bi posjetitelj mogao prodavati ili kupovati automobile, učestovati u anketi 
   
   ## Akteri
   1. Administrator: Održava stranicu,  
-  2. Gost korisnik: Pregled objavljenih automobila, pregled statistike, 
-  3. Registrirani korisnik: Prodaja i kupovina automobila, učestovanje u anketi, slanje privatnih poruka ostalim registriranim korisnicima, učestovanje u javnim razgovorima/diskusijama, 
-  4. Registrirani autosalon (pravno lice): Prodaja i kupovina automobila, učestovanje u anketama, slanje izvještaja o izvršenim prodajama koje nisu izvršene putem aplikacije, komunikacija sa ostalim registriranim korisnicima, 
-  5. Uposlenik: Odobrava prodaju i kupovinu automobila, briše prodate artikle, vrši ažuriranje statistike na osnovu kupovine, prodaje i rezultata ankete, 
-  6. Sistem za autorizaciju i naplatu karticom: Provjerava validnost uplate
+  2. Registrirani korisnik: Prodaja i kupovina automobila, učestovanje u anketi, slanje privatnih poruka ostalim registriranim korisnicima, učestovanje u javnim razgovorima/diskusijama, 
+  3. Registrirani autosalon (pravno lice): Prodaja i kupovina automobila, učestovanje u anketama, slanje izvještaja o izvršenim prodajama koje nisu izvršene putem aplikacije, komunikacija sa ostalim registriranim korisnicima, 
+  4. Uposlenik: Odobrava prodaju i kupovinu automobila, briše prodate artikle, vrši ažuriranje statistike na osnovu kupovine, prodaje i rezultata ankete, 
+  5. Sistem za autorizaciju i naplatu karticom: Provjerava validnost uplate
