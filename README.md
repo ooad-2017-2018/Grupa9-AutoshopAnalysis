@@ -60,6 +60,7 @@ Da bi posjetitelj mogao prodavati ili kupovati automobile, učestovati u anketi 
   13. Touchscreen
   14. Turbo
   15. Garancija
+  16. Cijena
   
   Potrebno je još dodati i slike vozila, a po želji se može dodati i detaljniji opis. Garancija se može odrediti na osnovu statističkih podataka o kvarovima na određenom modelu automobila. Nakon prodaje, korisnik treba ažurirati artikal, odnosno naznačiti da je prodat, nakon čega se briše iz baze i ažurira se statistika.
   
