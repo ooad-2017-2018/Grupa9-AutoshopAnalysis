@@ -1,1 +1,1 @@
-C:\Users\User\Desktop\OOAD PROJEKAT\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\AutoShopAnalysis.csproj;x86
+c:\users\whiteblack\source\repos\AutoShopAnalysis\AutoShopAnalysis\AutoShopAnalysis.csproj;x86
