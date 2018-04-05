@@ -101,11 +101,11 @@
     <Compile Include="Forme\LogInPage.xaml.cs">
       <DependentUpon>LogInPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\RegistracijaPage.xaml.cs">
-      <DependentUpon>RegistracijaPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Forme\Pocetna.xaml.cs">
       <DependentUpon>Pocetna.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\RegistracijaPage.xaml.cs">
+      <DependentUpon>RegistracijaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -142,13 +142,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forme\RegistracijaPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Forme\Pocetna.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forme\RegistracijaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

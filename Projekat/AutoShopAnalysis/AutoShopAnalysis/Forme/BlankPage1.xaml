@@ -9,13 +9,21 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <Image x:Name="CarImage" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Assets/carImage.png"  Height="55" Width="74" Margin="20,23,0,0" RenderTransformOrigin="1.27,0.879"/>
-        <Image x:Name="StatImage" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Source="/Assets/statisticsImage.png"  Height="77" Width="84" Margin="0,0,6,4" />
-        <TextBlock x:Name="Naslov" HorizontalAlignment="Center" Text="Prijava" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Blue" FontWeight="Bold" FontSize="30" Width="104" Margin="138,22,118,0" />
-        <TextBlock x:Name="KorisnickoIme" Text="Korisnicko ime" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="142"  RenderTransformOrigin="0.889,-1" Margin="20,227,198,386"/>
-        <TextBlock x:Name="Sifra" Text="Sifra" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" Foreground="Black" RenderTransformOrigin="0.581,1.119" Width="44" Margin="115,304,201,309" />
-        <TextBox x:Name="KorImeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="132" Margin="200,299,28,309" />
-        <TextBox x:Name="SifraTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="132" Margin="200,222,28,386" />
-        <Button x:Name ="PrijavaButton" Content="Prijava" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="45" Width="164" Margin="99,0,97,166" />
+        <Image x:Name="CarImage" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Assets/carImage.png" Margin="8,20,0,0" Height="55" Width="74"/>
+        <Image x:Name="StatImage" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Source="/Assets/statisticsImage.png" Margin="0,0,12,9" Height="82" Width="68" />
+
+        <TextBlock x:Name="Naslov" HorizontalAlignment="Center" Text="Registracija" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Blue" FontWeight="Bold" FontSize="30" Width="174" Margin="100,56,86,0"  />
+        <TextBlock x:Name="Ime" Text="Ime" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="43"  RenderTransformOrigin="1.479,0.556" Margin="104,162,213,451"/>
+        <TextBox x:Name="ImeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="130" Margin="181,296,49,312"/>
+        <TextBlock x:Name="Prezime" Text="Prezime" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="84" RenderTransformOrigin="0.19,3.519" Margin="70,229,206,384" />
+        <TextBox x:Name="PrezimeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="131" Margin="180,226,49,382" />
+        <TextBlock x:Name="Email" Text="Email" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" Foreground="Black" RenderTransformOrigin="0.581,1.119" Width="57" Margin="92,294,211,319" />
+        <TextBox x:Name="EmailTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="134" Margin="180,160,46,448"/>
+        <TextBlock x:Name="KorisnickoIme" Text="Korisnicko ime" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="144" Margin="11,357,205,256"/>
+        <TextBox x:Name="KorImeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="131" Margin="181,426,48,182"/>
+        <TextBlock x:Name="Sifra" Text="Sifra" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" Foreground="Black" RenderTransformOrigin="0.581,1.119" Width="44" Margin="102,423,214,190" />
+        <TextBox x:Name="SifraTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="132" Margin="182,358,46,250" />
+        <Button x:Name ="RegistracijaButton" Content="Registruj se" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="43" Width="138" Margin="112,0,110,63" />
+
     </Grid>
 </Page>

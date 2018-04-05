@@ -17,9 +17,9 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Source" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="RenderTransformOrigin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
@@ -72,7 +72,7 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="AutoShopAnalysis.Forme.LogInPage" />
-    <RootType FullName="AutoShopAnalysis.Forme.RegistracijaPage" />
     <RootType FullName="AutoShopAnalysis.Pocetna" />
+    <RootType FullName="AutoShopAnalysis.Forme.RegistracijaPage" />
   </Roots.RootTypes>
 </Roots>

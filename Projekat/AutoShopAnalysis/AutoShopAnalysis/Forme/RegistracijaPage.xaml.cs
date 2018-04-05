@@ -27,5 +27,9 @@ namespace AutoShopAnalysis.Forme
             this.InitializeComponent();
         }
 
+        private void KorisnickoIme_Copy1_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
