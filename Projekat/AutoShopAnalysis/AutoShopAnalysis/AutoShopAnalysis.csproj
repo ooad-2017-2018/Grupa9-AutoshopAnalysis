@@ -107,6 +107,10 @@
     <Compile Include="Forme\RegistracijaPage.xaml.cs">
       <DependentUpon>RegistracijaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Automobil.cs" />
+    <Compile Include="Model\Autosalon.cs" />
+    <Compile Include="Model\BankovniRacun.cs" />
+    <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
