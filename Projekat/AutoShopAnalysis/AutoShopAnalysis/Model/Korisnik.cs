@@ -110,6 +110,7 @@ namespace AutoShopAnalysis.Model
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
-        }
+        }
+
     }
 }
