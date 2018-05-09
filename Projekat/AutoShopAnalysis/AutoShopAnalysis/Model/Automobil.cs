@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace AutoShopAnalysis.Model
 {
-    class Automobil
+    public class Automobil: INotifyPropertyChanged
     {
         string proizvodjac;
         string model;
@@ -108,5 +109,14 @@ namespace AutoShopAnalysis.Model
         public string Opis { get => opis; set => opis = value; }
 
         public bool Prodan { get => prodan; set => prodan = value; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }

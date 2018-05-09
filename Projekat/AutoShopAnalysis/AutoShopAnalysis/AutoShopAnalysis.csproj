@@ -110,6 +110,7 @@
     <Compile Include="Model\Automobil.cs" />
     <Compile Include="Model\Autosalon.cs" />
     <Compile Include="Model\BankovniRacun.cs" />
+    <Compile Include="Model\INotifyPropertyChanged.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
