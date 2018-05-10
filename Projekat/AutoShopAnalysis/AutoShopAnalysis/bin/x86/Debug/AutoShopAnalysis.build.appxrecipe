@@ -139,10 +139,10 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win.system.runtime.extensions\4.1.0\runtimes\win\lib\netcore50\System.Runtime.Extensions.dll">
       <PackagePath>System.Runtime.Extensions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win7-x86.microsoft.netcore.jit\1.0.3\runtimes\win7-x86\native\clrjit.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win7-x64.microsoft.netcore.jit\1.0.3\runtimes\win7-x64\native\clrjit.dll">
       <PackagePath>clrjit.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win7-x86.runtime.native.system.io.compression\4.0.1\runtimes\win7-x86\native\clrcompression.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win7-x64.runtime.native.system.io.compression\4.0.1\runtimes\win7-x64\native\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win7.system.private.uri\4.0.2\runtimes\win\lib\netcore50\System.Private.Uri.dll">
@@ -420,6 +420,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\bin\x86\Debug\Forme\BlankPage1.xbf">
       <PackagePath>Forme\BlankPage1.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\bin\x86\Debug\Forme\DetaljiAutomobila.xbf">
+      <PackagePath>Forme\DetaljiAutomobila.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\bin\x86\Debug\Forme\LogInPage.xbf">
       <PackagePath>Forme\LogInPage.xbf</PackagePath>

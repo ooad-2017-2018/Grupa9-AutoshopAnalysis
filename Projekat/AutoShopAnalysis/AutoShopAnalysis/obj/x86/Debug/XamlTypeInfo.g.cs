@@ -132,21 +132,23 @@ namespace AutoShopAnalysis.AutoShopAnalysis_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "AutoShopAnalysis.Forme.BlankPage1";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "AutoShopAnalysis.Forme.LogInPage";
-            _typeNameTable[4] = "AutoShopAnalysis.Pocetna";
-            _typeNameTable[5] = "AutoShopAnalysis.Forme.RegistracijaPage";
+            _typeNameTable[3] = "AutoShopAnalysis.Forme.DetaljiAutomobila";
+            _typeNameTable[4] = "AutoShopAnalysis.Forme.LogInPage";
+            _typeNameTable[5] = "AutoShopAnalysis.Pocetna";
+            _typeNameTable[6] = "AutoShopAnalysis.Forme.RegistracijaPage";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::AutoShopAnalysis.Forme.BlankPage1);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::AutoShopAnalysis.Forme.LogInPage);
-            _typeTable[4] = typeof(global::AutoShopAnalysis.Pocetna);
-            _typeTable[5] = typeof(global::AutoShopAnalysis.Forme.RegistracijaPage);
+            _typeTable[3] = typeof(global::AutoShopAnalysis.Forme.DetaljiAutomobila);
+            _typeTable[4] = typeof(global::AutoShopAnalysis.Forme.LogInPage);
+            _typeTable[5] = typeof(global::AutoShopAnalysis.Pocetna);
+            _typeTable[6] = typeof(global::AutoShopAnalysis.Forme.RegistracijaPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -182,9 +184,10 @@ namespace AutoShopAnalysis.AutoShopAnalysis_XamlTypeInfo
         }
 
         private object Activate_0_BlankPage1() { return new global::AutoShopAnalysis.Forme.BlankPage1(); }
-        private object Activate_3_LogInPage() { return new global::AutoShopAnalysis.Forme.LogInPage(); }
-        private object Activate_4_Pocetna() { return new global::AutoShopAnalysis.Pocetna(); }
-        private object Activate_5_RegistracijaPage() { return new global::AutoShopAnalysis.Forme.RegistracijaPage(); }
+        private object Activate_3_DetaljiAutomobila() { return new global::AutoShopAnalysis.Forme.DetaljiAutomobila(); }
+        private object Activate_4_LogInPage() { return new global::AutoShopAnalysis.Forme.LogInPage(); }
+        private object Activate_5_Pocetna() { return new global::AutoShopAnalysis.Pocetna(); }
+        private object Activate_6_RegistracijaPage() { return new global::AutoShopAnalysis.Forme.RegistracijaPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -211,23 +214,30 @@ namespace AutoShopAnalysis.AutoShopAnalysis_XamlTypeInfo
                 xamlType = new global::AutoShopAnalysis.AutoShopAnalysis_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  AutoShopAnalysis.Forme.LogInPage
+            case 3:   //  AutoShopAnalysis.Forme.DetaljiAutomobila
                 userType = new global::AutoShopAnalysis.AutoShopAnalysis_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_LogInPage;
+                userType.Activator = Activate_3_DetaljiAutomobila;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  AutoShopAnalysis.Pocetna
+            case 4:   //  AutoShopAnalysis.Forme.LogInPage
                 userType = new global::AutoShopAnalysis.AutoShopAnalysis_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_Pocetna;
+                userType.Activator = Activate_4_LogInPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  AutoShopAnalysis.Forme.RegistracijaPage
+            case 5:   //  AutoShopAnalysis.Pocetna
                 userType = new global::AutoShopAnalysis.AutoShopAnalysis_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_RegistracijaPage;
+                userType.Activator = Activate_5_Pocetna;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  AutoShopAnalysis.Forme.RegistracijaPage
+                userType = new global::AutoShopAnalysis.AutoShopAnalysis_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_RegistracijaPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

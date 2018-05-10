@@ -668,3 +668,9 @@ C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalys
 C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\bin\x86\Debug\Forme\DetaljiAutomobila.xbf
+C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\obj\x86\Debug\AutoShopAnalysis.csprojAssemblyReference.cache
+C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\obj\x86\Debug\Forme\DetaljiAutomobila.g.i.cs
+C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\obj\x86\Debug\Forme\DetaljiAutomobila.g.cs
+C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\obj\x86\Debug\Forme\DetaljiAutomobila.xaml
+C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\obj\x86\Debug\Forme\DetaljiAutomobila.xbf

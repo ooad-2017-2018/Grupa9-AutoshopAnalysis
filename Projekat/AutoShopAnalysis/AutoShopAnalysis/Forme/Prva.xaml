@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="AutoShopAnalysis.Forme.DetaljiAutomobila"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AutoShopAnalysis.Forme"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Pivot  Margin="40,20,40,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <PivotItem Header="Home">
+                <Grid x:Name="gHome" />
+            </PivotItem>
+            <PivotItem Header="My profile">
+                <Grid x:Name="gMyProfile">
+                    <Image HorizontalAlignment="Left" Height="102" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+                    <Button x:Name="bPosted" HorizontalAlignment="Left" Margin="10, 161,0,107" VerticalAlignment="Center" Content="Posted" FontSize="15" Height="30" />
+                    <Button x:Name="bPurchased" HorizontalAlignment="Left" Margin="10, 201,0,67" VerticalAlignment="Center" Content="Purchaed" FontSize="15" Height="30" />
+                    <TextBlock HorizontalAlignment="Left" Margin="135,10,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="76" FontSize="24"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="135,83,0,179" Text="Username" VerticalAlignment="Stretch" Width="85" FontSize="16" />
+                    <TextBlock x:Name="Username" HorizontalAlignment="Left" Margin="295,83,0,181" Width="200" FontSize="16" Text=" "/>
+                    <TextBlock HorizontalAlignment="Left" Margin="135,121,0,147" Text="Email" Width="81" FontSize="16" />
+                    <TextBlock x:Name="Email" HorizontalAlignment="Left" Margin="295,121,0,147" Width="200" FontSize="16" Text=" "/>
+                    <TextBlock HorizontalAlignment="Left" Margin="135,161,0,107" Text="Phone number" Width="125" FontSize="16" />
+                    <TextBlock x:Name="PhoneNumber" HorizontalAlignment="Left" Margin="295,161,0,107" Width="200" FontSize="16" Text=" " />
+                    <TextBlock HorizontalAlignment="Left" Margin="135,201,0,67" Text="Credit Card Number" Width="150" FontSize="16" />
+                    <TextBlock x:Name="CreditCardNumber" HorizontalAlignment="Left" Margin="295,201,0,67" Width="200" FontSize="16" Text=" "/>
+
+
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Statistics">
+                <Grid x:Name="gStatistics" />
+            </PivotItem>
+            <PivotItem Header="About us">
+                <TextBlock HorizontalAlignment="Left" Margin="18,10,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            </PivotItem>
+        </Pivot>
+
+
+
+    </Grid>
+</Page>
