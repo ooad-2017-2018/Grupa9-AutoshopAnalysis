@@ -11,7 +11,14 @@
     <Grid>
         <Pivot  Margin="40,20,40,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
             <PivotItem Header="Home">
-                <Grid x:Name="gHome" />
+                <Grid x:Name="gHome">
+                    <Button x:Name="bSearch" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Stretch" Height="30" FontSize="15" Margin="450,10,0,252"/>
+                    <ScrollViewer HorizontalAlignment="Left"   VerticalAlignment="Center" Width="390" Margin="120,35,0,0" Height="225" >
+                        
+                    </ScrollViewer>
+                    <ScrollViewer x:Name="AdvancedSearch" HorizontalAlignment="Left" Margin="10, 32,0,0" Width="100"/>
+
+                </Grid>
             </PivotItem>
             <PivotItem Header="My profile">
                 <Grid x:Name="gMyProfile">
