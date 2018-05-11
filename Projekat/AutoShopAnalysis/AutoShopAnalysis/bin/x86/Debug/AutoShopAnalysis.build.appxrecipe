@@ -421,8 +421,8 @@
     <AppxPackagedFile Include="C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\bin\x86\Debug\Forme\BlankPage1.xbf">
       <PackagePath>Forme\BlankPage1.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\bin\x86\Debug\Forme\DetaljiAutomobila.xbf">
-      <PackagePath>Forme\DetaljiAutomobila.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\bin\x86\Debug\Forme\Prva.xbf">
+      <PackagePath>Forme\Prva.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nejira\Documents\GitHub\Grupa9-AutoshopAnalysis\Projekat\AutoShopAnalysis\AutoShopAnalysis\bin\x86\Debug\Forme\LogInPage.xbf">
       <PackagePath>Forme\LogInPage.xbf</PackagePath>

@@ -13,11 +13,20 @@
             <PivotItem Header="Home">
                 <Grid x:Name="gHome">
                     <Button x:Name="bSearch" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Stretch" Height="30" FontSize="15" Margin="450,10,0,252"/>
-                    <ScrollViewer HorizontalAlignment="Left"   VerticalAlignment="Center" Width="390" Margin="120,35,0,0" Height="225" >
-                        
-                    </ScrollViewer>
+                    <ListView x:Name="ListaAutomobila" HorizontalAlignment="Left"   VerticalAlignment="Center" Width="390" Margin="120,35,0,0" Height="225" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Height="100" Margin="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                     <ScrollViewer x:Name="AdvancedSearch" HorizontalAlignment="Left" Margin="10, 32,0,0" Width="100"/>
-
+                    
                 </Grid>
             </PivotItem>
             <PivotItem Header="My profile">
