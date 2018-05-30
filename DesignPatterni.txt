@@ -1,0 +1,451 @@
+-Strategy Pattern
+
+-Koristimo ga kada klasa ima metodu iz liste slicni metoda npr : 
+	Kada zelimo da klasa dinamicki odabere neku metodu ( Leti ), iz liste { Leti brzo, Leti sa krilima, Ne moze letjeti itd.)
+-Kada zelimo da koristimo i izaberemo neku od metoda dinamicki bez da narusavamo zavisnost Bazne i podklase.
+
+Primijer : 
+
+
+Imamo klasu Animal :
+abstract class Animal 
+{
+	String name;
+	
+	public void move();
+	...
+}
+class Dog : Animal
+{
+	setName();
+	@override
+	move();
+	...
+}
+class Bird : Animal
+{
+	setName();
+	@override
+	move();
+	...
+}
+Sada ako bi zeljeli u klasi Bird dodati metodu( mogucnost da leti ) mozemo uraditi na vise nacina.
+1.Najjednostavnije je samo dodati metodu fly() u klasu Animal,ali time nam se javlja dosta problema.
+	Kao prvo sve druge klase u buducnosti koje zele koristiti metodu fly() moraju je implementiradi ( dupliciranje koda)
+	Ne mozemo dinamicki promijeniti metodu.
+	Narusavamo Baznnu i podklasnu vezu.
+2.Drugi nacin je da napravimo interface Flys sa metodom fly()
+	Ovdje nam se isto javlja dosta dupliciranja koda ( svaka klasa mora implementirati svoj fly() ) 
+	Izbjegavati interface koji forsiraju akcije.
+
+Strategy pattern ovo rjesava tako sto napravimo interface Flys()
+public interface Flys
+{
+	String fly();
+}
+
+class ItFlys : Flys
+{
+	publc String fly()
+	{
+		return "Flying";
+	}
+}
+class CantFly: Flys
+{
+	publc String fly()
+	{
+		return "CantFly";
+	}
+}
+
+nakon toga u klasi Animal dodajemo field Tipa interface Flys
+
+private Flys mFlysType;
+
+sada ako zelimo u klasi Bird postaviti mogucnost leti
+sve sto trebamo uraditi je postaviti field na ItFlys
+
+mFlysType = new ItFlys();
+
+Prednosti : 
+	-smanjiva broj uslova ( if ) i izbjegava dupliciranje koda
+	-ne forsiramo promjenu bazne ili podklase dodavanjem novi mogucnosti
+	-Sakrtivamo komplicirani boiler plate code od korisnika
+Mane : Dosta se povecava broj klasa
+
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+Factory Pattern
+
+	-Koristimo ga kada zelimo da metoda vrati novu klasu iz skupine slicni klasa ( klase koje nasljedjuju baznu klasu ).
+	-Klasa se odabire dinamicki u runtimu.
+	-Kada ne znamo unaprijed koju klasu kreirati
+	-Da grupisemo i centralizujemo kod selekcije i kreiranja nove klase
+	-Da enkapsuliramo kreiranje objekta
+	-Ako ne zelimo da user zna svaku pod klasu.
+
+Primjer: 
+	Ako imamo igru i zelimo napraviti novog neprijatelja npr (EnemyShip)
+
+public abstract class EnemyShip {
+
+    private String name;
+
+    private double speed;
+
+    private double directionX;
+
+    private double directionY;
+
+    private double amtDamage;
+
+     
+
+    public String getName() { return name; }
+
+    public void setName(String newName) { name = newName; }
+
+    public void setDamage(double newDamage) { amtDamage = newDamage; }
+
+     
+
+    public void followHeroShip(){
+
+        System.out.println(getName() + " is following the hero");
+
+    }
+
+    public void displayEnemyShip(){
+
+        System.out.println(getName() + " is on the screen");
+
+    }
+
+    public void enemyShipShoots() {
+
+        System.out.println(getName() + " attacks and does " + getDamage() + " damage to hero");
+
+    }
+}
+ 
+public class UFOEnemyShip extends EnemyShip {
+	
+	public UFOEnemyShip(){
+		
+		setName("UFO Enemy Ship");
+		
+		setDamage(20.0);
+		
+	}
+	
+}
+public class RocketEnemyShip extends EnemyShip {
+	
+	public RocketEnemyShip(){
+		
+		setName("Rocket Enemy Ship");
+		
+		setDamage(10.0);
+		
+	}
+	
+}
+
+import java.util.Scanner;
+
+public class EnemyShipTesting {
+
+	public static void main(String[] args){
+		
+		// Create the factory object
+		EnemyShipFactory shipFactory = new EnemyShipFactory();
+		
+		// Enemy ship object
+		
+		EnemyShip theEnemy = null;
+		
+		Scanner userInput = new Scanner(System.in);
+		
+		System.out.print("What type of ship? (U / R / B)");
+		
+		if (userInput.hasNextLine()){
+			
+			String typeOfShip = userInput.nextLine();
+		
+			theEnemy = shipFactory.makeEnemyShip(typeOfShip);
+			
+			if(theEnemy != null){
+				
+				doStuffEnemy(theEnemy);
+				
+			} else System.out.print("Please enter U, R, or B next time");
+		
+		}
+		
+		/*
+		EnemyShip theEnemy = null;
+		
+		// Old way of creating objects
+		// When we use new we are not being dynamic
+		
+		EnemyShip ufoShip = new UFOEnemyShip();
+		
+		doStuffEnemy(ufoShip);
+		
+		System.out.print("\n");
+		
+		// -----------------------------------------
+		
+		// This allows me to make the program more dynamic
+		// It doesn't close the code from being modified
+		// and that is bad!
+		
+		// Defines an input stream to watch: keyboard
+		Scanner userInput = new Scanner(System.in);
+		
+		String enemyShipOption = "";
+		
+		System.out.print("What type of ship? (U or R)");
+		
+		if (userInput.hasNextLine()){
+			
+			enemyShipOption = userInput.nextLine();
+			
+		}
+		
+		if (enemyShipOption == "U"){
+			
+			theEnemy = new UFOEnemyShip();
+
+			
+		} else 
+		
+		if (enemyShipOption == "R"){
+			
+			theEnemy = new RocketEnemyShip();
+			
+		} else {
+			
+			theEnemy = new BigUFOEnemyShip();
+			
+		}
+		
+		doStuffEnemy(theEnemy);
+		
+		// --------------------------------------------
+		*/
+		
+	}
+	
+	// Executes methods of the super class
+	
+	public static void doStuffEnemy(EnemyShip anEnemyShip){
+		
+		anEnemyShip.displayEnemyShip();
+		
+		anEnemyShip.followHeroShip();
+		
+		anEnemyShip.enemyShipShoots();
+		
+	}
+	
+}
+// This is a factory thats only job is creating ships
+// By encapsulating ship creation, we only have one
+// place to make modifications
+
+public class EnemyShipFactory{
+	
+	// This could be used as a static method if we
+	// are willing to give up subclassing it
+	
+	public EnemyShip makeEnemyShip(String newShipType){
+		
+		EnemyShip newShip = null;
+		
+		if (newShipType.equals("U")){
+			
+			return new UFOEnemyShip();
+			
+		} else 
+		
+		if (newShipType.equals("R")){
+			
+			return new RocketEnemyShip();
+			
+		} else 
+		
+		if (newShipType.equals("B")){
+			
+			return new BigUFOEnemyShip();
+			
+		} else return null;
+		
+	}
+}
+
+Iz primjera vidimo da se dosta smanjuje dupliciranje koda i enkapsulira kreiranje objekta na jednom mjestu
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+Adapter pattern
+	Omogucava da dva razlicita nekompaktabilna interfaca rade zajedno
+	Sve klase mogu raditi zajedno sve dok se adapter bavi i rjesava probleme 
+	i nesporazume izmjedu klasa
+ 
+	
+// EnemyTank implements EnemyAttacker perfectly
+// Our job is to make classes with different methods
+// from EnemyAttacker to work with the EnemyAttacker interface
+
+import java.util.Random;
+
+public class EnemyTank implements EnemyAttacker{
+	
+	Random generator = new Random();
+
+	public void fireWeapon() {
+		
+		int attackDamage = generator.nextInt(10) + 1;
+		
+		System.out.println("Enemy Tank Does " + attackDamage + " Damage");
+		
+	}
+
+	public void driveForward() {
+		
+		int movement = generator.nextInt(5) + 1;
+		
+		System.out.println("Enemy Tank moves " + movement + " spaces");
+		
+	}
+
+	public void assignDriver(String driverName) {
+		
+		System.out.println(driverName + " is driving the tank");
+		
+	}
+	
+}
+
+// This is the Adaptee. The Adapter sends method calls
+// to objects that use the EnemyAttacker interface
+// to the right methods defined in EnemyRobot
+
+import java.util.Random;
+
+public class EnemyRobot{
+
+	Random generator = new Random();
+	
+	public void smashWithHands() {
+		
+		int attackDamage = generator.nextInt(10) + 1;
+		
+		System.out.println("Enemy Robot Causes " + attackDamage + " Damage With Its Hands");
+		
+	}
+
+	public void walkForward() {
+		
+		int movement = generator.nextInt(5) + 1;
+		
+		System.out.println("Enemy Robot Walks Forward " + movement + " spaces");
+		
+	}
+
+	public void reactToHuman(String driverName) {
+		
+		System.out.println("Enemy Robot Tramps on " + driverName);
+		
+	}
+	
+	
+	
+}
+
+
+// The Adapter must provide an alternative action for 
+// the the methods that need to be used because
+// EnemyAttacker was implemented.
+
+// This adapter does this by containing an object
+// of the same type as the Adaptee (EnemyRobot)
+// All calls to EnemyAttacker methods are sent
+// instead to methods used by EnemyRobot
+
+public class EnemyRobotAdapter implements EnemyAttacker{
+
+	EnemyRobot theRobot;
+	
+	public EnemyRobotAdapter(EnemyRobot newRobot){
+		
+		theRobot = newRobot;
+		
+	}
+	
+	public void fireWeapon() {
+		
+		theRobot.smashWithHands();
+		
+	}
+
+	public void driveForward() {
+		
+		theRobot.walkForward();
+		
+	}
+
+	public void assignDriver(String driverName) {
+		
+		theRobot.reactToHuman(driverName);
+		
+	}
+	
+	
+	
+}
+
+
+public class TestEnemyAttackers{
+	
+	public static void main(String[] args){
+		
+		EnemyTank rx7Tank = new EnemyTank();
+		
+		EnemyRobot fredTheRobot = new EnemyRobot();
+		
+		EnemyAttacker robotAdapter = new EnemyRobotAdapter(fredTheRobot);
+		
+		System.out.println("The Robot");
+		
+		fredTheRobot.reactToHuman("Paul");
+		fredTheRobot.walkForward();
+		fredTheRobot.smashWithHands();
+		System.out.println();
+		
+		System.out.println("The Enemy Tank");
+		
+		rx7Tank.assignDriver("Frank");
+		rx7Tank.driveForward();
+		rx7Tank.fireWeapon();
+		System.out.println();
+		
+		System.out.println("The Robot with Adapter");
+		
+		robotAdapter.assignDriver("Mark");
+		robotAdapter.driveForward();
+		robotAdapter.fireWeapon();
+
+	}
+	
+}
+	
