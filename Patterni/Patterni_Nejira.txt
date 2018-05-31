@@ -1,0 +1,172 @@
+﻿﻿---> Singleton Pattern
+Ovaj pattern koristimo ada postoji više objekata koje je potrebno samo jednom
+instancirati i koji se koriste kao jedinstven objekat. Koriste se za objekte 
+koji koriste driver-e. Korištenjem ovog patterna omogućeno je jedinstveno 
+kreiranje i upravljanje nekim objektom koji se često upotrebljava. Moguće je i
+da se objekat instancira tek pri prvom korištenju objekta (tzv. lazy instalation).
+Da bi koristili singleton pattern, prije svega potrebno je da kreiramo klasu
+Singleton sa private static atributom tipa Singleton i implementiramo metodu 
+getInstance() ili property(instance) koja vraća tu instancu. Potrebno je 
+implementirati i privatni konstruktor bez parametara koji omogućava da samo ova
+klasa može kreirati instancu. Kreira se samo jedna instanca, a unutar metode
+getInstance() se vrši provjera pristupa. To u C# možemo uraditi recimo ovako:
+
+public sealed class Singleton{
+
+	private static Singleton instance = null;
+	private static readonly object padlock = new object();
+
+	Singleton() {	}
+
+	public static Singleton Instance {
+		get {
+			lock (padlock) {
+				if (instance == null) {
+					instance = new Singleton();
+				}
+				return instance;
+			}
+		}
+	}
+}
+
+Ovaj pattern bi se mogao iskoristiti da se kreira samo jedna instanca objekta
+klase potrebne za rad sa bazom.
+
+---> Bridge pattern
+Bridge pattern spada u grupu tzv. strukturalnih patterna. Njegova osnovna namjena
+je da omogući odvajanje apstrakcije i implementacije neke klase tako da ta klasa
+može posjedovati više različitih apstrakcija i više različitih implementacija 
+za pojedine apstrakcije. Moguće ga je implementirati i kao adapter pattern sa
+asocijacijom ili agregacijom. 
+Implementacija ovog patterna mogla bi izgledati ovako: 
+
+namespace DoFactory.GangOfFour.Bridge.Structural {
+   class MainApp  {
+       static void Main() {
+      Abstraction ab = new RefinedAbstraction();
+
+      ab.Implementor = new ConcreteImplementorA();
+      ab.Operation();
+
+      ab.Implementor = new ConcreteImplementorB();
+      ab.Operation();
+
+      Console.ReadKey();
+    }
+  }
+
+   class Abstraction  {
+    protected Implementor implementor;
+ 
+    public Implementor Implementor {
+      set { implementor = value; }
+    }
+ 
+    public virtual void Operation() {
+      implementor.Operation();
+    }
+  }
+
+   abstract class Implementor {
+    public abstract void Operation();
+  }
+ 
+  class RefinedAbstraction : Abstraction {
+    public override void Operation() {
+      implementor.Operation();
+    }
+  }
+
+  class ConcreteImplementorA : Implementor {
+    public override void Operation() {
+      Console.WriteLine("ConcreteImplementorA Operation");
+    }
+  }
+ 
+  class ConcreteImplementorB : Implementor {
+    public override void Operation() {
+      Console.WriteLine("ConcreteImplementorB Operation");
+    }
+  }
+}
+ 
+
+Mogao bi se iskoristiti recimo za klasu Korisnik, ako bi nekada željeli 
+implementirati više različitih vrsta korisnika.
+
+---> State pattern
+Ovaj pattern spada u grupu patterna ponasanja. Oni se bave organizacijom algoritama, 
+dodjeljivanjem odgovornosti i komunikacijom između objekata. Ukoliko ponašanje objekta
+zavisi od stanja u kojem se nalazi, koristimo state pattern. Potrebno je kreirati 
+Final State Machine (FSM) koja sadrži stanja. Najjednostavniji primjer bi bio da se
+mašina nakon unosa 0 ugasi, a nakon unosa 1 upali. U C++ ovo možemo realizirati na
+sljedeći način:
+
+class Machine {
+  class State *current;
+  public:
+    Machine();
+    void setCurrent(State *s) {
+        current = s;
+    }
+    void on();
+    void off();
+};
+
+class State {
+  public:
+    virtual void on(Machine *m) {
+        cout << "Vec upaljena\n";
+    }
+    virtual void off(Machine *m) {
+        cout << "Vec ugasena\n";
+    }
+};
+
+void Machine::on() {
+  current->on(this);
+}
+
+void Machine::off() {
+  current->off(this);
+}
+
+class ON: public State {
+  public:
+    void off(Machine *m);
+};
+
+class OFF: public State {
+  public:
+    void on(Machine *m)
+    {
+        cout << "Palim masinu\n";
+        m->setCurrent(new ON());
+        delete this;
+    }
+};
+
+void ON::off(Machine *m) {
+  cout << "Gasim masinu\n";
+  m->setCurrent(new OFF());
+  delete this;
+}
+
+Machine::Machine() {
+  current = new OFF();
+  cout << "Kreirao masinu sa pocetnim stanjem off\n";
+}
+
+int main() {
+  Machine fsm;
+  int num;
+  while (1) {
+    cout << "Unesi 0 ili 1: ";
+    cin >> num;
+    if(num==1)fsm.on(); else fsm.off();
+  }
+}
+
+U našem projektu se ovaj pattern može iskoristiti da se automobili tretiraju
+drugačije u zavisnosti da li su kupljeni/obrisani ili nešto drugo.
