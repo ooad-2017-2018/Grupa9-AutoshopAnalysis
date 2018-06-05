@@ -1,0 +1,265 @@
+Memento:
+Ovo je jedan od paterna ponasanja. Koristimo ga kada je potrebno spasiti interno
+stanje nekog objekta van sistema da bi kasnije mogli taj isti objekat vratiti u
+sacuvano stanje. Najcesce se implementira klasa Memento koja predstavlja check 
+point i u kojoj cuvamo pojedinacna stanja, kao i klasa Caretaker pomocu koje je
+moguce sacuvati stanje ili vratiti objekat u neko sacuvano stanje. Primjer koda
+za ovaj patern u C#:
+
+namespace DoFactory.GangOfFour.Memento.Structural
+{
+ 
+  class MainApp
+
+  {
+   
+    static void Main()
+    {
+      Originator o = new Originator();
+      o.State = "On";
+ 
+
+      Caretaker c = new Caretaker();
+      c.Memento = o.CreateMemento();
+
+      o.State = "Off";
+
+      o.SetMemento(c.Memento);
+
+      Console.ReadKey();
+    }
+  }
+ 
+
+  class Originator
+
+  {
+    private string _state;
+ 
+
+    public string State
+    {
+      get { return _state; }
+      set
+
+      {
+        _state = value;
+        Console.WriteLine("State = " + _state);
+      }
+    }
+
+
+    public Memento CreateMemento()
+    {
+      return (new Memento(_state));
+    }
+
+    public void SetMemento(Memento memento)
+    {
+      Console.WriteLine("Restoring state...");
+      State = memento.State;
+    }
+  }
+ 
+
+  class Memento
+
+  {
+    private string _state;
+
+    public Memento(string state)
+    {
+      this._state = state;
+    }
+
+
+    public string State
+    {
+      get { return _state; }
+    }
+  }
+
+
+  class Caretaker
+
+  {
+    private Memento _memento;
+
+    public Memento Memento
+    {
+      set { _memento = value; }
+      get { return _memento; }
+    }
+  }
+}
+
+Moze se primijeniti npr. kod prodaje automobila. Kada se automobil oznaci kao
+prodan a iz nekog razloga ne dodje do prodaje, moze se ponovo vratiti u prodaju.
+
+Interpreter:
+Interpreter patern sluzi za opis gramatike nekog jezika i jezickih izraza. Potrebno
+je implementirati AbstractExpression interfejs koji koristi kompozitni patern da bi
+rijesio neki jezicki problem. Najcesce se koriste TerminalExpression i 
+CompoundExpression klase koje sluze za rekurzivno rjesavanje problema interpretacije
+jezickog izraza. TerminalExpression je bazni slucaj za neko pravilo, a 
+CompoundExpression neki dio pravila koji poziva drugo pravilo za obradu izraza.
+Primjer koda:
+
+namespace DoFactory.GangOfFour.Interpreter.Structural
+{
+
+  class MainApp
+
+  {
+
+    static void Main()
+    {
+      Context context = new Context();
+
+      ArrayList list = new ArrayList();
+
+      list.Add(new TerminalExpression());
+      list.Add(new NonterminalExpression());
+      list.Add(new TerminalExpression());
+      list.Add(new TerminalExpression());
+
+      foreach (AbstractExpression exp in list)
+      {
+        exp.Interpret(context);
+      }
+
+      Console.ReadKey();
+    }
+  }
+
+
+  class Context
+
+  {
+  }
+
+
+  abstract class AbstractExpression
+
+  {
+    public abstract void Interpret(Context context);
+  }
+ 
+
+  class TerminalExpression : AbstractExpression
+
+  {
+    public override void Interpret(Context context)
+    {
+      Console.WriteLine("Called Terminal.Interpret()");
+    }
+  }
+ 
+
+  class NonterminalExpression : AbstractExpression
+
+  {
+    public override void Interpret(Context context)
+    {
+      Console.WriteLine("Called Nonterminal.Interpret()");
+    }
+  }
+}
+
+Moze se primijeniti prilikom registracije/logina kada je potrebno da korisnik 
+unese sifru (sifre trebaju sadrzavati velika i mala slova, brojeve).
+
+Prototype:
+Ovaj patern kreira nove objekte tako sto klonira jedan od postojecih objekata,
+odnosno jednu od postojecih prototip instanci. Moze se desiti da je kreiranje
+novog objekta resursno zahtjevno i tada je potrebno vrsiti kloniranje postojeceg
+objekta. Prototype patern omogucava da se kreiraju prilagodjeni objekti bez 
+poznavanja njihove klase ili detalja kako je objekat kreiran. Da bi se iskoristio
+ovaj patern potrebno je kreirati:
+-klasu Client koja zahtijeva kloniranje postojeceg objekta (vrsi se preko interfejsa)
+-interfejs IPrototype kojim se omogucava kloniranje postojecih objekata
+-klase koje implementiraju kloniranje postojecih objekata (konkretni prototipi)
+Primjer koda:
+
+namespace DoFactory.GangOfFour.Prototype.Structural
+{
+
+  class MainApp
+
+  {
+
+    static void Main()
+    {
+      
+      ConcretePrototype1 p1 = new ConcretePrototype1("I");
+      ConcretePrototype1 c1 = (ConcretePrototype1)p1.Clone();
+      Console.WriteLine("Cloned: {0}", c1.Id);
+ 
+      ConcretePrototype2 p2 = new ConcretePrototype2("II");
+      ConcretePrototype2 c2 = (ConcretePrototype2)p2.Clone();
+      Console.WriteLine("Cloned: {0}", c2.Id);
+
+      Console.ReadKey();
+    }
+  }
+
+
+  abstract class Prototype
+
+  {
+    private string _id;
+
+
+    public Prototype(string id)
+    {
+      this._id = id;
+    }
+ 
+
+    public string Id
+    {
+      get { return _id; }
+    }
+ 
+    public abstract Prototype Clone();
+  }
+ 
+
+  class ConcretePrototype1 : Prototype
+
+  {
+
+
+    public ConcretePrototype1(string id)
+      : base(id)
+    {
+    }
+ 
+    // Returns a shallow copy
+
+    public override Prototype Clone()
+    {
+      return (Prototype)this.MemberwiseClone();
+    }
+  }
+
+
+  class ConcretePrototype2 : Prototype
+
+  {
+
+    public ConcretePrototype2(string id)
+      : base(id)
+    {
+    }
+
+    public override Prototype Clone()
+    {
+      return (Prototype)this.MemberwiseClone();
+    }
+  }
+}
+
+U nasoj aplikaciji su korisnici razdvojeni na pojedinacne korisnike i na autosalone.
+Medjutim, da imamo vise razlicitih vrsta korisnika, koji su svi naslijedjeni iz
+jedne bazne klase, mogli bi ovaj patern koristiti za kreiranje razlicitih korisnika.

@@ -4,11 +4,14 @@ using App9.Services;
 
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace App9
 {
     public sealed partial class App : Application
     {
+
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://AutoshopAnalysis.azurewebsites.net");
         private Lazy<ActivationService> _activationService;
 
         private ActivationService ActivationService

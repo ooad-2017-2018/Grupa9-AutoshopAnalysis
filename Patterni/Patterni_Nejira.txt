@@ -1,5 +1,5 @@
 ﻿﻿---> Singleton Pattern
-Ovaj pattern koristimo ada postoji više objekata koje je potrebno samo jednom
+Ovaj pattern koristimo kada postoji više objekata koje je potrebno samo jednom
 instancirati i koji se koriste kao jedinstven objekat. Koriste se za objekte 
 koji koriste driver-e. Korištenjem ovog patterna omogućeno je jedinstveno 
 kreiranje i upravljanje nekim objektom koji se često upotrebljava. Moguće je i
