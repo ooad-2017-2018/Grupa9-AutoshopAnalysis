@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="App9.Views.RegistracijaPage"
+    x:Class="App9.Views.RegistraicijaFirma"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -12,9 +12,9 @@
         <Image x:Name="StatImage" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Source="/Assets/statisticsImage.png" Margin="0,0,32,10" Height="87" Width="92" />
 
         <TextBlock x:Name="Naslov" HorizontalAlignment="Center" Text="Registracija" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Blue" FontWeight="Bold" Margin="480,45,310,0" FontSize="40" Width="234" />
-        <TextBlock x:Name="Ime" Text="Ime" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="43" Margin="380,158,601,455" RenderTransformOrigin="1.479,0.556"/>
+        <TextBlock x:Name="Ime" Text="Naziv firme" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="110" Margin="328,158,601,455" RenderTransformOrigin="1.479,0.556"/>
         <TextBox x:Name="ImeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="464,161,341,447"/>
-        <TextBlock x:Name="Prezime" Text="Prezime" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="84" Margin="348,238,592,375"/>
+        <TextBlock x:Name="Prezime" Text="ID broj" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="84" Margin="348,238,592,375"/>
         <TextBox x:Name="PrezimeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="462,235,343,373"/>
         <TextBlock x:Name="Email" Text="Email" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" Foreground="Black" RenderTransformOrigin="0.581,1.119" Width="57" Margin="368,313,599,300"/>
         <TextBox x:Name="EmailTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="460,309,345,299"/>
@@ -22,8 +22,8 @@
         <TextBox x:Name="KorImeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="460,383,345,225"/>
         <TextBlock x:Name="Sifra" Text="Sifra" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" Foreground="Black" RenderTransformOrigin="0.581,1.119" Width="44" Margin="374,453,606,160"/>
         <PasswordBox x:Name="SifraTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="459,452,346,156"/>
-        <Button x:Name ="RegistracijaButton" Click="RegistracijaButtonDugme_ClickAsync" Content="Registruj se" Background="DarkRed" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Margin="120,120,0,120" VerticalAlignment="Bottom" RenderTransformOrigin="0.308,1.781" Height="43" Width="219"/>
-        
+        <Button x:Name ="RegistracijaButton" Content="Registruj se" Background="DarkRed" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Margin="120,120,0,120" VerticalAlignment="Bottom" RenderTransformOrigin="0.308,1.781" Height="43" Width="219" Click="RegistracijaButton_ClickAsync"/>
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
 

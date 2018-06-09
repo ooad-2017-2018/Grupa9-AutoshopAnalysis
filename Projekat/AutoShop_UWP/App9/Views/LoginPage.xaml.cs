@@ -32,23 +32,28 @@ namespace App9.Views
 
         private void HyperlinkButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(RegistracijaPage));
+            this.Frame.Navigate(typeof(OdabirRegistracijaPage));
         }
 
         private async void Button_Click_1(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            if(KorImeTekst.Text == "Admin" && SifraTekst.Text == "Admin")
+            if(KorImeTekst.Password == "kramar" && SifraTekst.Text == "kramar" || KorImeTekst.Password == "korisnik123" && SifraTekst.Text == "korisnik123")
             {
+
                 this.Frame.Navigate(typeof(UserHomePagePage));
             }
             else
             {
-                MessageDialog msgbox = new MessageDialog("Unesi Admim, Admin");
+                MessageDialog msgbox = new MessageDialog("Pogrešni login podaci!");
                 msgbox.Commands.Clear();
                 msgbox.Commands.Add(new UICommand { Label = "OK", Id = 0 });
                 await msgbox.ShowAsync();
             }
         }
-        
+
+        private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OdabirRegistracijaPage));
+        }
     }
 }

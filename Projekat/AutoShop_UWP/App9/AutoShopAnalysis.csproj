@@ -151,6 +151,9 @@
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\OdabirRegistracijaPage.xaml.cs">
+      <DependentUpon>OdabirRegistracijaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PregledStatistikeDetailControl.xaml.cs">
       <DependentUpon>PregledStatistikeDetailControl.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,9 @@
     </Compile>
     <Compile Include="Views\RegistracijaPage.xaml.cs">
       <DependentUpon>RegistracijaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegistraicijaFirma.xaml.cs">
+      <DependentUpon>RegistraicijaFirma.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TabbedPage.xaml.cs">
       <DependentUpon>TabbedPage.xaml</DependentUpon>
@@ -218,6 +224,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\OdabirRegistracijaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PregledStatistikeDetailControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -229,6 +239,10 @@
     <Page Include="Views\RegistracijaPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RegistraicijaFirma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TabbedPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -252,8 +266,14 @@
   <ItemGroup>
     <Content Include="Assets\CarIcon.png" />
     <Content Include="Assets\carImage.png" />
+    <Content Include="Assets\company.png" />
+    <Content Include="Assets\company2.png" />
+    <Content Include="Assets\man.png" />
+    <Content Include="Assets\slikaStatistike.jpg" />
     <Content Include="Assets\statisticsImage.png" />
     <Content Include="Assets\statistics_icon.png" />
+    <Content Include="Pictures\slikaStatistike.jpg" />
+    <Content Include="Pictures\statistika.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

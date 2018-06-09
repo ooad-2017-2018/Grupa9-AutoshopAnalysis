@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -16,8 +17,8 @@ namespace App9.Views
         // For help see http://docs.telerik.com/windows-universal/controls/radchart/getting-started
 
 
-        
-       
+
+
         public ChartPage()
         {
             InitializeComponent();
@@ -25,12 +26,12 @@ namespace App9.Views
 
         }
 
-        public ObservableCollection<DataPoint> Source
+        public List<DataPoint> Source
         {
             get
             {
                 // TODO WTS: Replace this with your actual data
-                return SampleDataService.GetChartSampleData();
+                return FakeBaza.GetChartSampleData();
             }
         }
 

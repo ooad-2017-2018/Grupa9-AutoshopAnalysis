@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -19,12 +20,12 @@ namespace App9.Views
             InitializeComponent();
         }
 
-        public ObservableCollection<DataPoint> Source
+        public List<DataPoint> Source
         {
             get
             {
                 // TODO WTS: Replace this with your actual data
-                return FakeBaza.GetChartSampleData();
+                return FakeBaza.GetChart1SampleData();
             }
         }
 

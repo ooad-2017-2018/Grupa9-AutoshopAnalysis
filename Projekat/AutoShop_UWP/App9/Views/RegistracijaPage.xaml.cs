@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace App9.Views
@@ -24,6 +25,16 @@ namespace App9.Views
 
             storage = value;
             OnPropertyChanged(propertyName);
+        }
+
+
+        private async void RegistracijaButtonDugme_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            MessageDialog msgbox = new MessageDialog("Uspješna registracija korisnika!");
+            msgbox.Commands.Clear();
+            msgbox.Commands.Add(new UICommand { Label = "OK", Id = 0 });
+            await msgbox.ShowAsync();
+            Frame.Navigate(typeof(LoginPage));
         }
 
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

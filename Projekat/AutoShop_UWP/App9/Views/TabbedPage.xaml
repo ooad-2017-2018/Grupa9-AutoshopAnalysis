@@ -17,7 +17,7 @@
         <Pivot
             Grid.Row="1"
             x:Name="Items" Background="#FFE6DFDF" FocusVisualSecondaryBrush="#99000000"  >
-            <PivotItem Header="Stastistika 1">
+            <PivotItem Header="Mjesecne prodaje">
                 <!--reference the page with local:PageName-->
                 <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
                     <local:ChartPage></local:ChartPage>
@@ -25,20 +25,20 @@
                 </Grid>
             </PivotItem>
 
-            <PivotItem  Header="Stastistika 2" >
+            <PivotItem  Header="Najprodavanije marke" >
                 <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
                     <local:Chart1Page/>
 
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Stastistika 3">
+            <PivotItem Header="Najuspjesniji saloni">
                 <!--reference the page with local:PageName-->
                 <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
                     <local:Chart2Page></local:Chart2Page>
 
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Stastistika 4">
+            <PivotItem Header="Proizvodjaci - Najcesci kvarovi">
                 <!--reference the page with local:PageName-->
                 <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
                     

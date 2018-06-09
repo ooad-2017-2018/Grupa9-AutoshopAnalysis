@@ -22,12 +22,12 @@ namespace App9.Views
             mychart.Series[0].ItemsSource = CreateData();
         }
 
-        public ObservableCollection<DataPoint> Source
+        public List<DataPoint> Source
         {
             get
             {
                 // TODO WTS: Replace this with your actual data
-                return FakeBaza.GetChartSampleData();
+                return FakeBaza.GetChart1SampleData();
             }
         }
         public class Data
