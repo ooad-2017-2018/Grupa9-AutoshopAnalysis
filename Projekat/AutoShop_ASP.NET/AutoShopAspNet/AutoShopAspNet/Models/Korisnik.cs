@@ -13,7 +13,8 @@ namespace AutoShopAspNet.Models
     {
 
         [ScaffoldColumn(false)]
-        public int KorisnikId { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         [Required]
         public string Ime { get; set; }
@@ -21,7 +22,8 @@ namespace AutoShopAspNet.Models
         public string Prezime { get; set; }
 
         [Required]
-        [Range(5,15,ErrorMessage ="Duzina username-a mora biti izmedju 5-15 karaktera")]
+        [MinLength(5,ErrorMessage ="Duzina mora biti izmedju 5-20 karaktera")]
+        [MaxLength(20, ErrorMessage = "Duzina mora biti izmedju 5-20 karaktera")]
         public string Username { get; set; }
 
         [Required]

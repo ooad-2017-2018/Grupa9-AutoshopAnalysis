@@ -22,22 +22,19 @@ namespace AutoShopAspNet.Migrations
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Korisnik", t => t.Korisnik_KorisnikId)
                 .Index(t => t.Korisnik_KorisnikId);
-            
+
             CreateTable(
                 "dbo.Korisnik",
                 c => new
-                    {
-                        KorisnikId = c.Int(nullable: false, identity: true),
-                        Ime = c.String(),
-                        Prezime = c.String(),
-                        Username = c.String(),
-                        Password = c.String(),
-                        Telefon = c.String(),
-                        IdBankovniRacun_ID = c.Int(),
-                    })
-                .PrimaryKey(t => t.KorisnikId)
-                .ForeignKey("dbo.BankovniRacun", t => t.IdBankovniRacun_ID)
-                .Index(t => t.IdBankovniRacun_ID);
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Ime = c.String(),
+                    Prezime = c.String(),
+                    Username = c.String(),
+                    Password = c.String(),
+                    Telefon = c.String(),
+                })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.BankovniRacun",

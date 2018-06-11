@@ -208,10 +208,19 @@
     <Compile Include="Migrations\201806101230457_initial.Designer.cs">
       <DependentUpon>201806101230457_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806111351365_migracija2.cs" />
+    <Compile Include="Migrations\201806111351365_migracija2.Designer.cs">
+      <DependentUpon>201806111351365_migracija2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806111356318_migracija3.cs" />
+    <Compile Include="Migrations\201806111356318_migracija3.Designer.cs">
+      <DependentUpon>201806111356318_migracija3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Automobil.cs" />
     <Compile Include="Models\AutoSalon.cs" />
+    <Compile Include="Models\MyAuthorizeAttribute.cs" />
     <Compile Include="Models\OOADContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Korisnik.cs" />
@@ -264,7 +273,6 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -293,6 +301,7 @@
     <Content Include="Views\AutoSaloni\Details.cshtml" />
     <Content Include="Views\AutoSaloni\Edit.cshtml" />
     <Content Include="Views\AutoSaloni\Index.cshtml" />
+    <Content Include="Views\Korisnici\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,6 +322,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806101230457_initial.resx">
       <DependentUpon>201806101230457_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806111351365_migracija2.resx">
+      <DependentUpon>201806111351365_migracija2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806111356318_migracija3.resx">
+      <DependentUpon>201806111356318_migracija3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

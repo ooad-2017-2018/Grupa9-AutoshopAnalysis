@@ -22,7 +22,6 @@ namespace AutoShopAspNet.Models
         public Int32 Cijena { get; set; }
 
         [Required]
-        [DisplayName("Godiste automobila")]
         [Range(1995,2018, ErrorMessage ="Godiste mora biti izmedju 1995-2018")]
         public Int32 Godiste { get; set; }
         

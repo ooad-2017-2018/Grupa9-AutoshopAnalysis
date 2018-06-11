@@ -19,6 +19,7 @@ namespace OOADAspNetMVCEFAzure.Models
         public DbSet<Korisnik> Korisnik { get; set; }
         public DbSet<AutoSalon> AutoSalon { get; set; }
 
+
         //Ova funkcija se koriste da bi se ukinulo automatsko dodavanje množine u nazive
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

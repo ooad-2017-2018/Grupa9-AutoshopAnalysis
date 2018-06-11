@@ -53,7 +53,7 @@ namespace AutoShopAspNet.Controllers
             {
                 db.Automobil.Add(automobil);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Lista");
             }
 
             return View(automobil);
@@ -85,7 +85,7 @@ namespace AutoShopAspNet.Controllers
             {
                 db.Entry(automobil).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Lista");
             }
             return View(automobil);
         }
@@ -113,7 +113,7 @@ namespace AutoShopAspNet.Controllers
             Automobil automobil = db.Automobil.Find(id);
             db.Automobil.Remove(automobil);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Lista");
         }
 
         protected override void Dispose(bool disposing)
