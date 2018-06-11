@@ -12,8 +12,8 @@
         <TextBlock x:Name="Naslov" HorizontalAlignment="Center" Text="Prijava" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Blue" FontWeight="Bold" Margin="457,42,437,0" FontSize="40" Width="130" />
         <TextBlock x:Name="KorisnickoIme" Text="Korisnicko ime" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap"  Foreground="Black" Width="144" Margin="316,277,564,336"/>
         <TextBlock x:Name="Sifra" Text="Sifra" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" Foreground="Black" RenderTransformOrigin="0.581,1.119" Width="44" Margin="411,374,569,239"/>
-        <PasswordBox x:Name="KorImeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="501,374,304,234"/>
-        <TextBox x:Name="SifraTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="501,277,304,331"/>
+        <PasswordBox x:Name="SifraTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="501,374,304,234"/>
+        <TextBox x:Name="KorImeTekst" HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.434,0.056" Width="219" Margin="501,277,304,331"/>
         <HyperlinkButton Content="Nemate account?"  HorizontalAlignment="Left" Margin="70,12,0,12" VerticalAlignment="Bottom" Height="65" FontSize="24" FocusVisualSecondaryBrush="#99000000" BorderBrush="Black" Click="HyperlinkButton_Click" Background="#FFEEEEEE" FocusVisualPrimaryBrush="#FFE6E6E6">
             <HyperlinkButton.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

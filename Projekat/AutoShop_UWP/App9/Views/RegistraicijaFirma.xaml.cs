@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App9.Model;
+using Microsoft.WindowsAzure.MobileServices;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,13 +30,31 @@ namespace App9.Views
             this.InitializeComponent();
         }
 
+
+        IMobileServiceTable<Autosalon> userTableObj = App.MobileService.GetTable<Autosalon>();
+        
         private async void RegistracijaButton_ClickAsync(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Uspješna registracija!");
-            msgbox.Commands.Clear();
-            msgbox.Commands.Add(new UICommand { Label = "OK", Id = 0 });
-            await msgbox.ShowAsync();
-            Frame.Navigate(typeof(LoginPage));
+            try
+            {
+                Autosalon obj = new Autosalon();
+                obj.ime = ImeTekst.Text;
+                obj.idBroj = PrezimeTekst.Text;
+                obj.email = EmailTekst.Text;
+                obj.username = KorisnickoIme.Text;
+                obj.password = SifraTekst.Password;
+                App.autosalons.Add(obj);
+                await userTableObj.InsertAsync(obj);
+                MessageDialog msgDialog = new MessageDialog("Uspješno ste unijeli novog studenta.");
+
+                await msgDialog.ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msgDialogError = new MessageDialog("Error : " +
+                ex.ToString());
+                await msgDialogError.ShowAsync();
+            }
         }
     }
 }

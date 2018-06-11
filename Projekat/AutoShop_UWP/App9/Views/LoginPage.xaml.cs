@@ -3,6 +3,10 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
+using App9;
+using App9.Model;
+using System.Collections.Generic;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace App9.Views
 {
@@ -37,9 +41,11 @@ namespace App9.Views
 
         private async void Button_Click_1(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            if(KorImeTekst.Password == "kramar" && SifraTekst.Text == "kramar" || KorImeTekst.Password == "korisnik123" && SifraTekst.Text == "korisnik123")
-            {
 
+            var lista = App.korisniks;
+            if (lista.Exists(x => x.username == KorImeTekst.Text && x.password == SifraTekst.Password))
+            {
+                
                 this.Frame.Navigate(typeof(UserHomePagePage));
             }
             else
