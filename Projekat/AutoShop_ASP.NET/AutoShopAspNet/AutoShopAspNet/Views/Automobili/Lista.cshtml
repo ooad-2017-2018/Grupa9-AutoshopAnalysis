@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AutoShopAspNet.Models.Automobil>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+<p>
+    @Html.ActionLink("Dodaj novi", "Registriraj")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Marka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Boja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cijena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Godiste)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Boja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cijena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Godiste)
+        </td>
+        <td>
+            @Html.ActionLink("Azuriraj", "Azuriraj", new { id=item.ID }) |
+            @Html.ActionLink("Detalji", "Detalji", new { id=item.ID }) |
+            @Html.ActionLink("Obrisi", "Obrisi", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

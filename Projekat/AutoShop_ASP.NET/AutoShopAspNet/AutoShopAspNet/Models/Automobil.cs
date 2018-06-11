@@ -1,30 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace AutoShopAspNet.Models
 {
     public class Automobil
     {
-        public int automobilId { get; set; }
-        public string proizvodjac { get; set; }
-        public string model { get; set; }
-        public string stanje { get; set; }
-        public int godiste { get; set; }
-        public double kilometraza { get; set; }
-        public string gorivo { get; set; }
-        public double kubikaza { get; set; }
-        public double konjskihSnaga { get; set; }
-        public string pogon { get; set; }
-        public string boja { get; set; }
-        public bool ocarinjen { get; set; }
-        public bool servisnaKnjiga { get; set; }
-        public bool turbo { get; set; }
-        public double garancije { get; set; }
-        public double cijena { get; set; }
-        public string opis { get; set; }
-        public bool prodan { get; set; }
+        [ScaffoldColumn(false)]
+        public int ID { get; set; }
 
-}
+        [Required]
+        public String Marka { get; set; }
+
+        [Required]
+        public String Model { get; set; }
+
+        [Required]
+        public String Boja { get; set; }
+
+        [Required]
+        public Int32 Cijena { get; set; }
+
+        [Required]
+        [DisplayName("Godiste automobila")]
+        [Range(1995,2018, ErrorMessage ="Godiste mora biti izmedju 1995-2018")]
+        public Int32 Godiste { get; set; }
+        
+    }
 }

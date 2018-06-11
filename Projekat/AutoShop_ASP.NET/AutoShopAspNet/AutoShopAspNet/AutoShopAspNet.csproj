@@ -196,12 +196,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AutomobiliController.cs" />
+    <Compile Include="Controllers\AutoSaloniController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KorisniciController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806101230457_initial.cs" />
+    <Compile Include="Migrations\201806101230457_initial.Designer.cs">
+      <DependentUpon>201806101230457_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Automobil.cs" />
+    <Compile Include="Models\AutoSalon.cs" />
+    <Compile Include="Models\OOADContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -267,6 +278,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Automobili\Registriraj.cshtml" />
+    <Content Include="Views\Automobili\Obrisi.cshtml" />
+    <Content Include="Views\Automobili\Detalji.cshtml" />
+    <Content Include="Views\Automobili\Azuriraj.cshtml" />
+    <Content Include="Views\Automobili\Lista.cshtml" />
+    <Content Include="Views\Korisnici\Create.cshtml" />
+    <Content Include="Views\Korisnici\Delete.cshtml" />
+    <Content Include="Views\Korisnici\Details.cshtml" />
+    <Content Include="Views\Korisnici\Edit.cshtml" />
+    <Content Include="Views\Korisnici\Index.cshtml" />
+    <Content Include="Views\AutoSaloni\Create.cshtml" />
+    <Content Include="Views\AutoSaloni\Delete.cshtml" />
+    <Content Include="Views\AutoSaloni\Details.cshtml" />
+    <Content Include="Views\AutoSaloni\Edit.cshtml" />
+    <Content Include="Views\AutoSaloni\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -283,6 +309,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806101230457_initial.resx">
+      <DependentUpon>201806101230457_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

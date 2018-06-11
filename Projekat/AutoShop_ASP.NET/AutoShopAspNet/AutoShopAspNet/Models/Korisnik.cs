@@ -11,17 +11,25 @@ namespace AutoShopAspNet.Models
 {
     public class Korisnik
     {
-        public int korisnikId { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string telefon { get; set; }
-        public BankovniRacun idBankovniRacun { get; set; }
+
+        [ScaffoldColumn(false)]
+        public int KorisnikId { get; set; }
+
+        [Required]
+        public string Ime { get; set; }
+        [Required]
+        public string Prezime { get; set; }
+
+        [Required]
+        [Range(5,15,ErrorMessage ="Duzina username-a mora biti izmedju 5-15 karaktera")]
+        public string Username { get; set; }
+
+        [Required]
+        public string Password { get; set; }
+
+        public string Telefon { get; set; }
 
 
-        //dio u kojem se definisu veze sa ostalim klasama
-        public virtual ICollection<Automobil> Automobil { get; set; }
 
     }
 }
